@@ -46,6 +46,8 @@ imap kj <Esc>
 
 " yank all file to +
 nmap <leader>ya gg"+yG
+xnoremap <leader>yy "+y
+
 " paste from +
 nmap <leader>p "+p
 nmap <leader>P "+P
