@@ -75,7 +75,7 @@ nmap <leader>sb :Buffers<cr>
 
 "nmap windows
 nmap <leader>wn <C-w>n
-nmap <leader>wt <C-w>v<C-w><Right><CR>:term<CR>
+nmap <leader>wt <C-w>v<C-w><Right>:term<CR>
 nmap <leader>wv <C-w>v
 nmap <leader>wc <C-w>c
 
