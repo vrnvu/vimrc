@@ -1,5 +1,5 @@
-" plugs
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin(stdpath('data'))
+
 Plug 'joshdick/onedark.vim'
 Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
 " config
@@ -43,11 +44,18 @@ set guioptions-=L
 imap jk <Esc>
 imap kj <Esc>
 
-nmap <leader>fs w<cr>
+" yank all file to +
+nmap <leader>ya gg"+yG
+" paste from +
+nmap <leader>p "+p
+nmap <leader>P "+P
 
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
+
+" clear last search
+nmap // :noh<cr>
 
 " maps
 map <C-k> <C-w><Up>
@@ -65,13 +73,25 @@ nmap <leader>sb :Buffers<cr>
 
 "nmap windows
 nmap <leader>wn <C-w>n
+nmap <leader>wt <C-w>v<C-w><Right><CR>:term<CR>
 nmap <leader>wv <C-w>v
 nmap <leader>wc <C-w>c
 
-" tab buffer cycling
+" buffer cycling
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 nmap <leader>bd :bdelete<CR>
+nmap <leader>bl :ls<CR>
+
+" tabs managmen
+nmap <leader>tc :tabc<CR>
+nmap <leader>tl :tabs<CR>
+" tabnext and tabprevious, also in normal mode gt and GT
+nmap <leader>tn :tabn<CR>
+nmap <leader>tp :tabp<CR>
+
+" registries
+nmap <leader>rl :reg<CR>
 
 " nmap fugitive
 nmap <leader>gs :Git<cr>
@@ -82,3 +102,6 @@ let g:gruvbox_contrast_dark = "medium"
 highlight Normal ctermbg=234
 set laststatus=2
 set noshowmode
+
+" runners
+nmap <leader>rp :!python3 %<CR>
