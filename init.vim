@@ -23,6 +23,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'tommcdo/vim-exchange'
+
 call plug#end()
 
 " config
