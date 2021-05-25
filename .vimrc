@@ -115,7 +115,7 @@ Plug 'dracula/vim'
  nmap <leader>fx :q<cr>
 
  " nmap fzf 
- nmap <C-p> :GFiles<cr>
+ nmap <C-p> :Files<cr>
 " nmap <leader>sf :GFiles<cr>
  nmap <leader>sr :Rg<cr>
  nmap <leader>sb :Buffers<cr>
