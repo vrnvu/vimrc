@@ -96,8 +96,8 @@ map H ^
 map L $
 
 " move lines around
-vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
 
 " telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
@@ -213,6 +213,8 @@ nnoremap <leader>gpl :Git pull<CR>
 " inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 " inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
+" ultisnips patch over tab been mapped to switching buffers
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 " trim white spaces augroup
 fun! TrimWhiteSpaces()
@@ -240,7 +242,7 @@ augroup END
  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
  autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
  autocmd FileType go nmap <leader>t <Plug>(go-test)
- autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+ autocmd FileType go nmap <leader>l :GoLint<CR>
 
  let g:go_list_type = "quickfix"    " error lists are of type quickfix
  let g:go_auto_sameids = 0          " highlight matching identifiers
@@ -250,6 +252,12 @@ augroup END
  map <C-n> :cnext<CR>
  map <C-m> :cprevious<CR>
  nnoremap <leader>a :cclose<CR>
+
+ " free vars
+ xnoremap <leader>e :GoFreevars<CR>
+
+ " implement interface stub
+ nmap <leader>i :GoImpl<CR>
 
  " Alternate
  " :A :AV :AS :AT
@@ -267,9 +275,9 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
  set updatetime=300
  set shortmess+=c
 
- nmap <silent> gr <Plug>(coc-references)
- nmap <silent> gi <Plug>(coc-implementation)
- nmap <silent> rn <Plug>(coc-rename)
+ autocmd FileType go nmap <silent> gr <Plug>(coc-references)
+ autocmd FileType go nmap <silent> gi <Plug>(coc-implementation)
+ autocmd FileType go nmap <leader>rn <Plug>(coc-rename)
 
  nnoremap <silent> K :call <SID>show_documentation()<CR>
  function! s:show_documentation()
