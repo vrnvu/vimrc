@@ -36,6 +36,10 @@ Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 
+"zen mode
+Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
+
+" git fugitive
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
@@ -163,6 +167,9 @@ nmap <leader>tp :tabp<CR>
 
 " registries
 nmap <leader>rl :reg<CR>
+
+" zenmode
+nmap <leader>ez :ZenMode<CR>
 
 " nmap fugitive
 nnoremap <leader>ga :Git add %:p<CR><CR>
