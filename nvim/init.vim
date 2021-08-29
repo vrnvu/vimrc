@@ -39,6 +39,10 @@ Plug 'jiangmiao/auto-pairs'
 "zen mode
 Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
 
+" debugger https://www.youtube.com/watch?v=AnTX2mtOl9Q
+Plug 'puremourning/vimspector'
+Plug 'szw/vim-maximizer'
+
 " git fugitive
 Plug 'tpope/vim-fugitive'
 
@@ -91,7 +95,22 @@ highlight Normal guibg=none
 imap jk <Esc>
 imap kj <Esc>
 
-" Jump to start and end of line using the home row keys
+" Sane Y lol
+nnoremap Y y$
+
+" keeping mouse centered when n,N,J
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+
+"Jump to start and end of line using the home row keys
 map H ^
 map L $
 
@@ -287,3 +306,32 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
      call CocAction('doHover')
    endif
  endfunction
+
+
+ " vimspector debugger remaps
+fun! GotoWindow(id)
+    call win_gotoid(a:id)
+    MaximizerToggle
+endfun
+
+nnoremap <leader>m :MaximizerToggle!<CR>
+nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
+nnoremap <leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
+nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
+nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
+nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
+nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+
+nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
+
+nmap <leader>dl <Plug>VimspectorStepInto
+nmap <leader>dj <Plug>VimspectorStepOver
+nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>d_ <Plug>VimspectorRestart
+nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+
+nmap <leader>drc <Plug>VimspectorRunToCursor
+nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
