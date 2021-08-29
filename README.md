@@ -1,9 +1,11 @@
 # dotfiles
 
-## nvim
+- [fish shell](https://fishshell.com/)
 
-## tmux
+- [dracula theme](https://draculatheme.com/fish)
 
-## ssh
+- [fzf](https://github.com/jethrokuan/fzf)
 
+- [nvim](https://neovim.io/)
 
+- [tmux](https://github.com/tmux/tmux)
