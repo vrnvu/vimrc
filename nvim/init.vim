@@ -172,7 +172,11 @@ nmap <leader>wc <C-w>c
 " buffer cycling
 nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
+
+" second option closes buffer no windows
 nmap <leader>bd :bd!<CR>
+" nmap <leader>bd :bp<bar>sp<bar>bn<bar>bd<CR>
+
 nmap <leader>bl :ls<CR>
 
 " tabs managment
@@ -197,8 +201,17 @@ nnoremap <leader>gc :Git commit -v -q<CR>
 nnoremap <leader>gt :Git commit -v -q %:p<CR>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>go :Git checkout<Space>
-nnoremap <leader>gps :Git push<CR>
-nnoremap <leader>gpl :Git pull<CR>
+nnoremap <leader>grebase :Git rebase -i<space>
+nnoremap <leader>gpush :Git push<CR>
+nnoremap <leader>gpushu :Git push -u<CR>
+nnoremap <leader>gpushf :Git push --force<CR>
+nnoremap <leader>gfetch :Git fetch<CR>
+nnoremap <leader>gpull :Git pull<CR>
+nnoremap <leader>gdiff :Git diff<CR>
+nnoremap <leader>gdt :Git difftool<CR>
+nnoremap <leader>gds :Gdiffsplit<CR>
+nnoremap <leader>glog :Git log<CR>
+nnoremap <leader>gblame :Git blame<CR>
 
 " LSP
 " compe
@@ -236,16 +249,16 @@ nnoremap <leader>gpl :Git pull<CR>
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " trim white spaces augroup
-fun! TrimWhiteSpaces()
-	let l:save = winsaveview()
-	keeppatterns %s/\s\+$//e
-	call winrestview(l:save)
-endfun
+" fun! TrimWhiteSpaces()
+" 	let l:save = winsaveview()
+" 	keeppatterns %s/\s\+$//e
+" 	call winrestview(l:save)
+" endfun
 
-augroup vrnvu
-	autocmd!
-	autocmd BufWritePre * :call TrimWhiteSpaces()
-augroup END
+" augroup vrnvu
+" 	autocmd!
+" 	autocmd BufWritePre * :call TrimWhiteSpaces()
+" augroup END
 
 "-- vim-go specific configuration
 " run :GoBuild or :GoTestCompile based on the go file
