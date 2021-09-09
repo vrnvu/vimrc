@@ -184,6 +184,13 @@ nmap <leader>tt :tabnew<CR>
 nmap <leader>tc :tabc<CR>
 nmap <leader>tl :tabs<CR>
 
+" tab movement
+nmap <leader>t1 1gt<CR>
+nmap <leader>t2 2gt<CR>
+nmap <leader>t3 3gt<CR>
+nmap <leader>t4 4gt<CR>
+nmap <leader>t5 5gt<CR>
+
 " tabnext and tabprevious, also in normal mode gt and GT
 nmap <leader>tn :tabn<CR>
 nmap <leader>tp :tabp<CR>
@@ -202,6 +209,8 @@ nnoremap <leader>gt :Git commit -v -q %:p<CR>
 nnoremap <leader>gb :Git branch<Space>
 nnoremap <leader>go :Git checkout<Space>
 nnoremap <leader>grebase :Git rebase -i<space>
+nnoremap <leader>grebasec :Git rebase --continue<space>
+nnoremap <leader>grebasea :Git rebase --abort<space>
 nnoremap <leader>gpush :Git push<CR>
 nnoremap <leader>gpushu :Git push -u<CR>
 nnoremap <leader>gpushf :Git push --force<CR>
