@@ -27,6 +27,9 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
+	# Switch to a branch
+	co = "!f() { git checkout \"$1\"; }; f"
+
 	# Switch to a branch, creating it if necessary
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
@@ -113,7 +116,7 @@
 	# Make `git rebase` safer on OS X
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
-	editor = code
+	editor = nvim
 
 [color]
 
@@ -192,5 +195,6 @@
 
 # [commit]
 # 	gpgsign = true
-# [pull]
-# 	rebase = true
+ [pull]
+ 	rebase = true
+
