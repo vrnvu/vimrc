@@ -67,3 +67,26 @@ sd
 tldr
 ytop
 ```
+
+## usr/bin
+
+```
+batcat
+calibre
+cargo
+docker
+firefox
+fish
+fzf
+fzf-tmux
+gimp
+git
+google-chrome
+http
+jq
+rsync
+rustc
+vim
+nvim
+xclip
+```
