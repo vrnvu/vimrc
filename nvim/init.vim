@@ -43,6 +43,9 @@ Plug 'folke/zen-mode.nvim' " https://github.com/folke/zen-mode.nvim
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 
+" markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " git fugitive
 Plug 'tpope/vim-fugitive'
 
@@ -380,3 +383,8 @@ nnoremap <leader>d<space> :call vimspector#Continue()<CR>
 nmap <leader>drc <Plug>VimspectorRunToCursor
 nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
+
+" markdown mappings
+nmap <leader>mp <Plug>MarkdownPreview
+nmap <leader>mps <Plug>MarkdownPreviewStop
+nmap <leader>mpt <Plug>MarkdownPreviewToggle
