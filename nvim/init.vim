@@ -385,6 +385,6 @@ nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
 " markdown mappings
-nmap <leader>mp <Plug>MarkdownPreview
-nmap <leader>mps <Plug>MarkdownPreviewStop
-nmap <leader>mpt <Plug>MarkdownPreviewToggle
+nmap <leader>mdp <Plug>MarkdownPreview
+nmap <leader>mds <Plug>MarkdownPreviewStop
+nmap <leader>mdt <Plug>MarkdownPreviewToggle
