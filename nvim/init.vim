@@ -28,6 +28,13 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " https://github.com/fatih/v
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " https://github.com/neoclide/coc.nvim
 Plug 'SirVer/ultisnips'                             " https://github.com/sirver/UltiSnips
 
+" js and ts
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'dracula/vim'
 
 Plug 'tpope/vim-surround'
@@ -341,9 +348,10 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-autocmd FileType go nmap <silent> gr <Plug>(coc-references)
-autocmd FileType go nmap <silent> gi <Plug>(coc-implementation)
-autocmd FileType go nmap <leader>rn <Plug>(coc-rename)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <leader>rn <Plug>(coc-rename)
 
 " show doc with K
  nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -388,3 +396,8 @@ nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 nmap <leader>mdp <Plug>MarkdownPreview
 nmap <leader>mds <Plug>MarkdownPreviewStop
 nmap <leader>mdt <Plug>MarkdownPreviewToggle
+
+" js
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
