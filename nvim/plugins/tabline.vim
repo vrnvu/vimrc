@@ -1,0 +1,1 @@
+Plug 'mkitt/tabline.vim'
