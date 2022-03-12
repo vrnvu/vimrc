@@ -27,9 +27,9 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-autocmd FileType go nmap <silent> gr <Plug>(coc-references)
-autocmd FileType go nmap <silent> gi <Plug>(coc-implementation)
-autocmd FileType go nmap <leader>rn <Plug>(coc-rename)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <leader>rn <Plug>(coc-rename)
 
 " show doc with K
  nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -41,3 +41,5 @@ autocmd FileType go nmap <leader>rn <Plug>(coc-rename)
    endif
  endfunction
 
+
+ " Python coc specifics

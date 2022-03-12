@@ -1,9 +1,11 @@
-"Get out of insert mode
-imap jk <Esc>
-imap kj <Esc>
+" Make j/k visual down and up instead of whole lines. This makes word
+" wrapping a lot more pleasent.
+map j gj
+map k gk
 
 " Sane Y lol
 nnoremap Y y$
+
 
 " keeping mouse centered when n,N,J
 nnoremap n nzzzv
@@ -29,7 +31,7 @@ vnoremap J :m '>+1<CR>gv=gv
 
 " yank all file to +
 nmap <leader>ya gg"+yG
-xnoremap <leader>yy "+y
+xnoremap <leader>y "+y
 
 " paste from +
 nmap <leader>p "+p
@@ -73,7 +75,7 @@ nmap <leader>bl :ls<CR>
 
 " tabs managment
 nmap <leader>tt :tabnew<CR>
-nmap <leader>tc :tabc<CR>
+nmap <leader>tx :tabc<CR>
 nmap <leader>tl :tabs<CR>
 
 " tab movement
@@ -89,10 +91,6 @@ nmap <leader>tp :tabp<CR>
 
 " registries
 nmap <leader>rl :reg<CR>
-
-" insert closing while writting
-imap ;; <esc>A;<esc>
-imap ,, <esc>A,<esc>
 
 " autocomplition sanes
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"

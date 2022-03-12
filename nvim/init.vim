@@ -4,6 +4,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+let mapleader = " "
+
 call plug#begin(data_dir . '/plugins')
 
 " Dracula
@@ -59,7 +61,6 @@ source ~/.config/nvim/plugins/vim-fugitive.vim
 
 call plug#end()
 
-let mapleader = " "
 colorscheme dracula
 
 source ~/.config/nvim/base.vim
