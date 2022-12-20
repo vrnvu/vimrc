@@ -10,6 +10,7 @@ call plug#begin(data_dir . '/plugins')
 
 " Dracula
 source ~/.config/nvim/plugins/dracula.vim
+Plug 'ellisonleao/gruvbox.nvim'
 
 " Telescope
 source ~/.config/nvim/plugins/popup.vim
@@ -39,6 +40,9 @@ source ~/.config/nvim/plugins/vim-go.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/utilsnips.vim
 
+" vim rust
+Plug 'rust-lang/rust.vim'
+
 " movement and writting helpers
 source ~/.config/nvim/plugins/vim-surround.vim
 source ~/.config/nvim/plugins/vim-easymotion.vim
@@ -61,6 +65,8 @@ source ~/.config/nvim/plugins/vim-fugitive.vim
 
 call plug#end()
 
+set termguicolors
+set background=dark
 colorscheme dracula
 
 source ~/.config/nvim/base.vim
