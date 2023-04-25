@@ -97,6 +97,7 @@ ytop
 batcat
 calibre
 cargo
+dive
 docker
 firefox
 fish
@@ -107,6 +108,10 @@ git
 google-chrome
 http
 jq
+k9s
+netcat
+nomad
+parallel
 rsync
 rustc
 vim
