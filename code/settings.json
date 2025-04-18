@@ -1,120 +1,66 @@
 {
-    "workbench.colorTheme": "Dracula",
-    "editor.suggestSelection": "first",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.fontFamily": "Fira Code",
+    "workbench.colorTheme": "Free Solo",
     "editor.fontLigatures": true,
-    "editor.lineNumbers": "on",
-    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "vim.statusBarColors.normal": "",
     "vim.leader": " ",
     "vim.useSystemClipboard": true,
     "vim.camelCaseMotion.enable": true,
     "vim.easymotion": true,
-    "vim.handleKeys": { 
-      "<C-f>": false,
-      "<C-h>": false,
-      "<Alt+Down>": false,
-      "<Alt+Up>": false 
-    },
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "k"],
-        "after": ["<Esc>"]
-      },
-      {
-        "before": ["k", "j"],
-        "after": ["<Esc>"]
-      }
-    ],
-    // https://code.visualstudio.com/docs/getstarted/keybindings
     "vim.normalModeKeyBindings": [
-      // Editor 
-      {
-        "before": ["leader", "e", "z"],
-        "commands": [ "workbench.action.toggleZenMode",]
-      },
-      {
-        "before": ["leader", "e", "f"],
-        "commands": [ "workbench.action.toggleSidebarVisibility",]
-      },
-      {
-        "before": ["leader", "e", "e"],
-        "commands": [ "workbench.extensions.action.installExtensions",]
-      },
-      // File editor
-      {
-        "before": ["leader", "f", "n"],
-        "commands": [ "workbench.action.files.newUntitledFile",]
-      },
-      {
-        "before": ["leader", "f", "c"],
-        "commands": [ "workbench.action.closeActiveEditor",]
-      },
-      {
-        "before": ["leader", "f", "s"],
-        "commands": [ "workbench.action.files.save",]
-      },
-      {
-        "before": ["leader", "f", "q"],
-        "commands": [ "workbench.action.quickOpen",]
-      },
-      {
-        "before": ["leader", "f", "o"],
-        "commands": [ "workbench.action.files.openFile" ]
-      },
-      {
-        "before": ["leader", "f", "r"],
-        "commands": ["workbench.action.terminal.toggleTerminal"]
-      },
-      // yank all file
-      {
-        "before": ["leader", "y", "a"],
-        "after": ["g", "g", "y", "G"]
-      }
-    ],
-    "vim.visualModeKeyBindings": [
         {
             "before": [
-                ">"
+                "leader",
+                "f",
+                "s"
             ],
             "commands": [
-                "editor.action.indentLines"
+                "workbench.action.files.save",
             ]
         },
         {
             "before": [
-                "<"
+                "leader",
+                "f",
+                "m"
             ],
             "commands": [
-                "editor.action.outdentLines"
+                "workbench.action.toggleZenMode"
             ]
         },
+        {
+            "before": [
+                "leader",
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinitionAside"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "n",
+                "e"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        }
     ],
-    "window.zoomLevel": 1,
-    "[go]": {
-      "editor.defaultFormatter": "golang.go"
-    },
     "python.languageServer": "Pylance",
-    "editor.minimap.enabled": false,
-    "C_Cpp.updateChannel": "Insiders",
-    "C_Cpp.default.cppStandard": "c++17",
-    "workbench.editorAssociations": {
-      "*.ipynb": "jupyter-notebook"
-    },
-    "go.toolsManagement.autoUpdate": true,
-    "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "editor.tabSize": 8,
-    "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
-    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.wordWrap": "off",
-    "notebook.cellToolbarLocation": {
-      "default": "right",
-      "jupyter-notebook": "left"
-    },
-    "security.workspace.trust.untrustedFiles": "open",
-  }
+    "python.analysis.typeCheckingMode": "strict",
+}
